@@ -1,0 +1,8 @@
+on:
+  push:
+jobs:
+  display:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print docker version
+        run: docker version
