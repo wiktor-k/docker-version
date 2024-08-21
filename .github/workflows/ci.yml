@@ -6,3 +6,16 @@ jobs:
     steps:
       - name: Print docker version
         run: docker version
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test docker-daemon
+        run: |
+          echo "Docker Version"
+          docker version
+          docker pull alpine:latest
+          echo
+          echo "Podman Version"
+          podman version
+          podman pull docker-daemon:alpine:latest
